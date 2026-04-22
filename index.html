@@ -19,7 +19,6 @@
             width: 100%;
             height: 100%;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: #f5f5f5;
         }
 
         body {
@@ -36,48 +35,45 @@
         .header {
             background: linear-gradient(135deg, #2c5aa0 0%, #1e3c72 100%);
             color: white;
-            padding: 16px;
+            padding: 12px;
             text-align: center;
             flex-shrink: 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
             z-index: 100;
         }
 
         .header h1 {
-            font-size: 1.5em;
+            font-size: 1.3em;
             margin: 0;
             font-weight: 600;
         }
 
         .header p {
-            font-size: 0.85em;
+            font-size: 0.75em;
             opacity: 0.9;
-            margin-top: 4px;
+            margin-top: 3px;
         }
 
         .content {
             display: grid;
             grid-template-columns: 1fr 340px;
-            gap: 0;
             flex: 1;
             overflow: hidden;
+            gap: 0;
         }
 
         #map {
             width: 100%;
             height: 100%;
-            background: #e0e0e0;
         }
 
         .sidebar {
             background: #f5f7fa;
             border-left: 1px solid #ddd;
             overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            padding: 16px;
+            padding: 12px;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         @media (max-width: 768px) {
@@ -91,110 +87,106 @@
                 left: 0;
                 right: 0;
                 width: 100%;
-                max-height: 50vh;
+                height: 0;
+                max-height: 0;
                 border-left: none;
-                border-top: 1px solid #ddd;
-                border-radius: 12px 12px 0 0;
-                transform: translateY(100%);
-                transition: transform 0.3s ease;
-                z-index: 40;
+                border-top: 2px solid #2c5aa0;
+                border-radius: 16px 16px 0 0;
+                z-index: 999;
+                transition: max-height 0.4s ease;
+                overflow: hidden;
             }
 
             .sidebar.open {
-                transform: translateY(0);
+                max-height: 70vh;
+                overflow-y: auto;
             }
         }
 
         .section {
             background: white;
-            padding: 12px;
-            border-radius: 8px;
-            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+            padding: 10px;
+            border-radius: 6px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .section h3 {
-            font-size: 0.95em;
-            margin-bottom: 10px;
+            font-size: 0.9em;
+            margin-bottom: 8px;
             color: #2c5aa0;
             border-bottom: 2px solid #2c5aa0;
-            padding-bottom: 8px;
+            padding-bottom: 6px;
         }
 
         .legend-item {
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
-            font-size: 0.8em;
+            margin-bottom: 6px;
+            font-size: 0.75em;
         }
 
         .legend-color {
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            margin-right: 10px;
-            border: 2px solid #666;
+            margin-right: 8px;
+            border: 1px solid #666;
             flex-shrink: 0;
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 8px;
-            margin-bottom: 8px;
+            gap: 6px;
         }
 
         .stat-box {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 10px;
-            border-radius: 6px;
+            padding: 8px;
+            border-radius: 5px;
             text-align: center;
-            font-size: 0.75em;
+            font-size: 0.7em;
         }
 
         .stat-number {
-            font-size: 1.6em;
+            font-size: 1.5em;
             font-weight: bold;
         }
 
         .trail-list {
-            font-size: 0.75em;
-            max-height: 250px;
+            font-size: 0.7em;
+            max-height: 200px;
             overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
         }
 
         .trail-item {
-            padding: 8px;
-            margin: 4px 0;
+            padding: 6px;
+            margin: 3px 0;
             background: #f9f9f9;
             border-left: 3px solid #667eea;
-            border-radius: 4px;
+            border-radius: 3px;
             cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .trail-item:active {
-            background: #e8e8e8;
-            transform: translateX(3px);
         }
 
         .trail-item strong {
             color: #2c5aa0;
             display: block;
             font-size: 0.85em;
-            margin-bottom: 2px;
+            margin-bottom: 1px;
         }
 
         .trail-item small {
             color: #666;
+            display: block;
+            line-height: 1.2;
         }
 
         .footer {
             background: white;
-            padding: 12px;
+            padding: 8px;
             text-align: center;
-            font-size: 0.75em;
+            font-size: 0.65em;
             color: #666;
             border-top: 1px solid #ddd;
             flex-shrink: 0;
@@ -202,17 +194,17 @@
 
         .toggle-sidebar {
             position: fixed;
-            bottom: 16px;
-            right: 16px;
+            bottom: 20px;
+            right: 20px;
             background: #2c5aa0;
             color: white;
             border: none;
-            padding: 12px 16px;
+            padding: 14px 18px;
             border-radius: 8px;
-            font-size: 0.9em;
+            font-size: 1em;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
             z-index: 50;
             display: none;
         }
@@ -223,75 +215,62 @@
             }
         }
 
+        .sidebar-close {
+            background: #999;
+            color: white;
+            border: none;
+            padding: 10px 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 0.85em;
+        }
+
+        .sidebar-close:active {
+            background: #777;
+        }
+
         .leaflet-popup-content-wrapper {
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         .popup-content {
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         .popup-title {
             font-weight: bold;
             color: #2c5aa0;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             border-bottom: 1px solid #ddd;
-            padding-bottom: 5px;
+            padding-bottom: 4px;
         }
 
         .popup-item {
-            margin: 5px 0;
+            margin: 4px 0;
+            font-size: 0.8em;
         }
 
         .popup-label {
             font-weight: 600;
             color: #333;
         }
-
-        .sidebar-header {
-            display: none;
-            font-weight: bold;
-            color: #2c5aa0;
-            margin-bottom: 8px;
-            padding-bottom: 8px;
-            border-bottom: 2px solid #2c5aa0;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar-header {
-                display: block;
-            }
-        }
-
-        .close-btn {
-            float: right;
-            background: none;
-            border: none;
-            color: #2c5aa0;
-            cursor: pointer;
-            font-size: 1.2em;
-            font-weight: bold;
-            padding: 0;
-        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🦅 GHBBC 2025 Uttarakhand Bird Survey Map</h1>
-            <p>11th Great Himalayan Bird Count - Interactive Geographic Distribution</p>
+            <h1>🦅 GHBBC 2025 Uttarakhand</h1>
+            <p>Bird Survey Interactive Map</p>
         </div>
 
         <div class="content">
             <div id="map"></div>
-            <button class="toggle-sidebar" id="toggleBtn">📍 Show Info</button>
 
             <div class="sidebar" id="sidebar">
-                <div class="sidebar-header">
-                    Survey Information
-                    <button class="close-btn" onclick="document.getElementById('sidebar').classList.remove('open'); document.getElementById('toggleBtn').style.display = 'block';">✕</button>
-                </div>
+                <button class="sidebar-close" id="closeBtn">Close ✕</button>
 
                 <div class="section">
                     <h3>Species Richness</h3>
@@ -322,7 +301,7 @@
                     <div class="stats-grid">
                         <div class="stat-box">
                             <div class="stat-number">16</div>
-                            <div>Active Trails</div>
+                            <div>Trails</div>
                         </div>
                         <div class="stat-box">
                             <div class="stat-number">393</div>
@@ -332,14 +311,16 @@
                 </div>
 
                 <div class="section">
-                    <h3>📍 Top Biodiversity Hotspots</h3>
+                    <h3>Top Hotspots</h3>
                     <div class="trail-list" id="trailList"></div>
                 </div>
             </div>
+
+            <button class="toggle-sidebar" id="toggleBtn">📍 Show Info</button>
         </div>
 
         <div class="footer">
-            <p><strong>GHBBC 2025</strong> | 11th Great Himalayan Bird Count | Uttarakhand, India</p>
+            <p><strong>GHBBC 2025</strong> | Uttarakhand | 11th Great Himalayan Bird Count</p>
         </div>
     </div>
 
@@ -347,23 +328,19 @@
         var map = L.map('map').setView([30.3, 79.8], 8);
 
         var osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenStreetMap contributors',
+            attribution: '© OpenStreetMap',
             maxZoom: 13,
             crossOrigin: 'anonymous'
         });
 
         var topoLayer = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-            attribution: '© OpenTopoMap contributors',
+            attribution: '© OpenTopoMap',
             maxZoom: 13,
             crossOrigin: 'anonymous'
         });
 
         osmLayer.addTo(map);
-
-        L.control.layers({
-            'Street Map': osmLayer,
-            'Topographic': topoLayer
-        }).addTo(map);
+        L.control.layers({ 'Street Map': osmLayer, 'Topographic': topoLayer }).addTo(map);
 
         var trails = [
             { name: 'Trail 17', species: 139, lat: 30.45, lng: 79.25, district: 'Nainital', elevation: 1850 },
@@ -421,7 +398,7 @@
                 '<div class="popup-item"><span class="popup-label">Species:</span> ' + trail.species + '</div>' +
                 '<div class="popup-item"><span class="popup-label">District:</span> ' + trail.district + '</div>' +
                 '<div class="popup-item"><span class="popup-label">Elevation:</span> ' + trail.elevation + 'm</div>' +
-                '<div class="popup-item"><span class="popup-label">Biodiversity Index:</span> ' + ((trail.species / maxSpecies) * 100).toFixed(1) + '%</div></div>';
+                '<div class="popup-item"><span class="popup-label">Index:</span> ' + ((trail.species / maxSpecies) * 100).toFixed(1) + '%</div></div>';
 
             circle.bindPopup(popupHTML);
             circle.addTo(map);
@@ -437,14 +414,13 @@
 
             circle.on('click', function() {
                 map.setView(this.getLatLng(), 11);
-                closeSidebar();
             });
         });
 
         var sorted = trails.slice().sort(function(a, b) { return b.species - a.species; });
         var trailListHTML = '';
         sorted.forEach(function(t) {
-            trailListHTML += '<div class="trail-item" onclick="highlightTrail(\'' + t.name + '\')"><strong>' + t.name + '</strong><small><strong style="color: ' + statusColors[getStatus(t.species)] + ';">● ' + t.species + ' spp</strong></small><small>' + t.district + ' | ' + t.elevation + 'm</small></div>';
+            trailListHTML += '<div class="trail-item" onclick="highlightTrail(\'' + t.name + '\')"><strong>' + t.name + '</strong><small><strong style="color: ' + statusColors[getStatus(t.species)] + ';">● ' + t.species + ' spp</strong></small><small>' + t.district + '</small></div>';
         });
         document.getElementById('trailList').innerHTML = trailListHTML;
 
@@ -462,18 +438,15 @@
 
         var sidebar = document.getElementById('sidebar');
         var toggleBtn = document.getElementById('toggleBtn');
+        var closeBtn = document.getElementById('closeBtn');
 
         toggleBtn.addEventListener('click', function() {
             sidebar.classList.add('open');
-            toggleBtn.style.display = 'none';
         });
 
-        function closeSidebar() {
-            if (window.innerWidth < 769) {
-                sidebar.classList.remove('open');
-                toggleBtn.style.display = 'block';
-            }
-        }
+        closeBtn.addEventListener('click', function() {
+            sidebar.classList.remove('open');
+        });
 
         L.control.scale().addTo(map);
     </script>
